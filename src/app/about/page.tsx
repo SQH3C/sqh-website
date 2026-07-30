@@ -46,8 +46,8 @@ export default function AboutPage() {
           <div className="relative">
             <div className="glass rounded-xl p-2 glow-border">
               <img
-                src="https://placehold.co/600x400/0a0e27/00d4ff?text=NexCore+Factory"
-                alt="NexCore Factory"
+                src="https://placehold.co/600x400/0a0e27/00d4ff?text=SQH+Factory"
+                alt="SQH Factory"
                 className="w-full rounded-lg"
               />
             </div>

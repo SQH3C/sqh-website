@@ -1,4 +1,4 @@
-# DESIGN.md - NexCore PC Components
+# DESIGN.md - SQH PC Components
 
 ## 气质与意象
 - 关键词：深空科技、赛博硬件、未来工厂

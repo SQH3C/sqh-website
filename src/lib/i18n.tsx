@@ -56,9 +56,9 @@ const translations: TranslationMap = {
   'cat.peripheral': { en: 'Peripheral', zh: '外设', ja: '周辺機器', es: 'Periféricos', ar: 'الأجهزة الطرفية' },
 
   // About
-  'about.title': { en: 'About NexCore', zh: '关于NexCore', ja: 'NexCoreについて', es: 'Sobre NexCore', ar: 'عن NexCore' },
+  'about.title': { en: 'About SQH', zh: '关于SQH', ja: 'SQHについて', es: 'Sobre SQH', ar: 'عن SQH' },
   'about.subtitle': { en: 'Pioneering PC hardware excellence since 2008', zh: '自2008年起引领电脑硬件卓越之路', ja: '2008年からPCハードウェアの卓越性を牽引', es: 'Pioneros en excelencia de hardware PC desde 2008', ar: 'ريادة التميز في مكونات الحاسوب منذ 2008' },
-  'about.desc': { en: 'NexCore Technology is a leading global manufacturer and exporter of high-performance PC components. With state-of-the-art facilities spanning 50,000 square meters and a team of 800+ engineers, we deliver cutting-edge hardware solutions to over 120 countries worldwide.', zh: 'NexCore Technology是全球领先的高性能电脑配件制造商和出口商。拥有50,000平方米的先进设施和800多名工程师团队，我们为120多个国家提供尖端硬件解决方案。', ja: 'NexCore Technologyは、高性能PCパーツの世界的なメーカーです。50,000平方メートルの施設と800名以上のエンジニアチームで、120カ国以上にソリューションを提供。', es: 'NexCore Technology es un fabricante y exportador líder mundial de componentes PC de alto rendimiento.', ar: 'NexCore Technology هي شركة رائدة عالمياً في تصنيع وتصدير مكونات الحاسوب عالية الأداء.' },
+  'about.desc': { en: 'SQH is a leading global manufacturer and exporter of high-performance PC components. With state-of-the-art facilities spanning 50,000 square meters and a team of 800+ engineers, we deliver cutting-edge hardware solutions to over 120 countries worldwide.', zh: 'SQH是全球领先的高性能电脑配件制造商和出口商。拥有50,000平方米的先进设施和800多名工程师团队，我们为120多个国家提供尖端硬件解决方案。', ja: 'SQHは、高性能PCパーツの世界的なメーカーです。50,000平方メートルの施設と800名以上のエンジニアチームで、120カ国以上にソリューションを提供。', es: 'SQH es un fabricante y exportador líder mundial de componentes PC de alto rendimiento.', ar: 'SQH هي شركة رائدة عالمياً في تصنيع وتصدير مكونات الحاسوب عالية الأداء.' },
   'about.timeline': { en: 'Our Journey', zh: '发展历程', ja: '沿革', es: 'Nuestra Trayectoria', ar: 'مسيرتنا' },
   'about.certs': { en: 'Certifications', zh: '认证资质', ja: '認証', es: 'Certificaciones', ar: 'الشهادات' },
   'about.factory': { en: 'Our Factory', zh: '工厂实力', ja: '工場', es: 'Nuestra Fábrica', ar: 'مصنعنا' },
@@ -95,12 +95,12 @@ const translations: TranslationMap = {
   'footer.terms': { en: 'Terms of Service', zh: '服务条款', ja: '利用規約', es: 'Términos de Servicio', ar: 'شروط الخدمة' },
 
   // Chat
-  'chat.welcome': { en: 'Hello! Welcome to NexCore. How can I help you today?', zh: '您好！欢迎来到NexCore。有什么可以帮您的？', ja: 'こんにちは！NexCoreへようこそ。何かお手伝いできますか？', es: '¡Hola! Bienvenido a NexCore. ¿Cómo puedo ayudarle?', ar: 'مرحباً! أهلاً بك في NexCore. كيف يمكنني مساعدتك؟' },
+  'chat.welcome': { en: 'Hello! Welcome to SQH. How can I help you today?', zh: '您好！欢迎来到SQH。有什么可以帮您的？', ja: 'こんにちは！SQHへようこそ。何かお手伝いできますか？', es: '¡Hola! Bienvenido a SQH. ¿Cómo puedo ayudarle?', ar: 'مرحباً! أهلاً بك في SQH. كيف يمكنني مساعدتك؟' },
   'chat.placeholder': { en: 'Type your message...', zh: '输入您的消息...', ja: 'メッセージを入力...', es: 'Escriba su mensaje...', ar: 'اكتب رسالتك...' },
   'chat.send': { en: 'Send', zh: '发送', ja: '送信', es: 'Enviar', ar: 'إرسال' },
   'chat.autoReply1': { en: 'Thank you for your interest! Our team will respond shortly. Meanwhile, feel free to browse our product catalog.', zh: '感谢您的关注！我们的团队将很快回复。同时，欢迎浏览我们的产品目录。', ja: 'ありがとうございます！チームがすぐに対応します。', es: '¡Gracias por su interés! Nuestro equipo responderá pronto.', ar: 'شكراً لاهتمامك! سيرد فريقنا قريباً.' },
   'chat.autoReply2': { en: 'I understand your question. Let me connect you with a specialist who can provide detailed information.', zh: '我了解您的问题。让我为您连接专家获取详细信息。', ja: 'ご質問を理解しました。専門家に接続します。', es: 'Entiendo su pregunta. Le conectaré con un especialista.', ar: 'أفهم سؤالك. سأوصلك بمتخصص.' },
-  'chat.title': { en: 'NexCore Support', zh: 'NexCore 客服', ja: 'NexCore サポート', es: 'Soporte NexCore', ar: 'دعم NexCore' },
+  'chat.title': { en: 'SQH Support', zh: 'SQH 客服', ja: 'SQH サポート', es: 'Soporte SQH', ar: 'دعم SQH' },
 };
 
 interface I18nContextType {

@@ -7,8 +7,8 @@ import LiveChat from '@/components/LiveChat';
 import ParticleBackground from '@/components/ParticleBackground';
 
 export const metadata: Metadata = {
-  title: 'NexCore Technology | High-Performance PC Components',
-  description: 'Global leader in high-performance PC hardware manufacturing & export. CPUs, GPUs, Memory, SSDs, and more.',
+  title: 'SQH | High-Performance PC Components',
+  description: 'SQH (sqhpc.com) - Global leader in high-performance PC hardware manufacturing & export. CPUs, GPUs, Memory, SSDs, and more.',
   keywords: ['PC components', 'CPU', 'GPU', 'memory', 'SSD', 'motherboard', 'hardware', 'export', 'wholesale'],
 };
 

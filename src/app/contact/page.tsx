@@ -220,8 +220,8 @@ export default function ContactPage() {
                 </svg>
                 Email
               </h3>
-              <p className="text-[#8892b0] text-sm">sales@nexcore-tech.com</p>
-              <p className="text-[#8892b0] text-sm mt-1">support@nexcore-tech.com</p>
+              <p className="text-[#8892b0] text-sm">sales@sqhpc.com</p>
+              <p className="text-[#8892b0] text-sm mt-1">support@sqhpc.com</p>
             </div>
 
             {/* Map placeholder */}

@@ -29,7 +29,7 @@ export const productCategories = [
 export const products: Product[] = [
   {
     id: 'cpu-01',
-    name: 'NexCore X9-7950X',
+    name: 'SQH X9-7950X',
     category: 'cpu',
     image: 'https://placehold.co/400x300/0a0e27/00d4ff?text=CPU+X9-7950X',
     description: '16-Core / 32-Thread Desktop Processor',
@@ -45,7 +45,7 @@ export const products: Product[] = [
   },
   {
     id: 'cpu-02',
-    name: 'NexCore i9-14900K',
+    name: 'SQH i9-14900K',
     category: 'cpu',
     image: 'https://placehold.co/400x300/0a0e27/00d4ff?text=CPU+i9-14900K',
     description: '24-Core Hybrid Architecture Processor',
@@ -61,7 +61,7 @@ export const products: Product[] = [
   },
   {
     id: 'mem-01',
-    name: 'NexCore Vengeance DDR5-6400',
+    name: 'SQH Vengeance DDR5-6400',
     category: 'memory',
     image: 'https://placehold.co/400x300/0a0e27/6c5ce7?text=DDR5-6400',
     description: '32GB (2x16GB) High-Performance DDR5 Kit',
@@ -77,7 +77,7 @@ export const products: Product[] = [
   },
   {
     id: 'mem-02',
-    name: 'NexCore Trident DDR5-7200',
+    name: 'SQH Trident DDR5-7200',
     category: 'memory',
     image: 'https://placehold.co/400x300/0a0e27/6c5ce7?text=DDR5-7200',
     description: '64GB (2x32GB) Extreme Performance DDR5',
@@ -93,7 +93,7 @@ export const products: Product[] = [
   },
   {
     id: 'ssd-01',
-    name: 'NexCore Phantom 4TB NVMe',
+    name: 'SQH Phantom 4TB NVMe',
     category: 'storage',
     image: 'https://placehold.co/400x300/0a0e27/00d4ff?text=NVMe+4TB',
     description: 'PCIe Gen5 NVMe M.2 SSD',
@@ -109,7 +109,7 @@ export const products: Product[] = [
   },
   {
     id: 'gpu-01',
-    name: 'NexCore RTX 5090 Founders',
+    name: 'SQH RTX 5090 Founders',
     category: 'gpu',
     image: 'https://placehold.co/400x300/0a0e27/6c5ce7?text=RTX+5090',
     description: '32GB GDDR7 Flagship Graphics Card',
@@ -125,7 +125,7 @@ export const products: Product[] = [
   },
   {
     id: 'gpu-02',
-    name: 'NexCore RX 9070 XT',
+    name: 'SQH RX 9070 XT',
     category: 'gpu',
     image: 'https://placehold.co/400x300/0a0e27/6c5ce7?text=RX+9070XT',
     description: '16GB GDDR6 High-End Graphics Card',
@@ -141,7 +141,7 @@ export const products: Product[] = [
   },
   {
     id: 'mb-01',
-    name: 'NexCore X870E Taichi',
+    name: 'SQH X870E Taichi',
     category: 'motherboard',
     image: 'https://placehold.co/400x300/0a0e27/00d4ff?text=X870E+Board',
     description: 'AM5 E-ATX Enthusiast Motherboard',
@@ -157,7 +157,7 @@ export const products: Product[] = [
   },
   {
     id: 'psu-01',
-    name: 'NexCore Thor 1200W Platinum',
+    name: 'SQH Thor 1200W Platinum',
     category: 'psu',
     image: 'https://placehold.co/400x300/0a0e27/00d4ff?text=PSU+1200W',
     description: '1200W 80+ Platinum Fully Modular',
@@ -173,7 +173,7 @@ export const products: Product[] = [
   },
   {
     id: 'case-01',
-    name: 'NexCore HyperView 7000X',
+    name: 'SQH HyperView 7000X',
     category: 'case',
     image: 'https://placehold.co/400x300/0a0e27/6c5ce7?text=Case+7000X',
     description: 'Full-Tower Tempered Glass RGB Case',
@@ -189,7 +189,7 @@ export const products: Product[] = [
   },
   {
     id: 'cool-01',
-    name: 'NexCore FrostArc 360 ARGB',
+    name: 'SQH FrostArc 360 ARGB',
     category: 'cooling',
     image: 'https://placehold.co/400x300/0a0e27/00d4ff?text=AIO+360',
     description: '360mm AIO Liquid CPU Cooler',
@@ -205,7 +205,7 @@ export const products: Product[] = [
   },
   {
     id: 'peri-01',
-    name: 'NexCore K95 Mechanical Keyboard',
+    name: 'SQH K95 Mechanical Keyboard',
     category: 'peripheral',
     image: 'https://placehold.co/400x300/0a0e27/6c5ce7?text=Keyboard+K95',
     description: 'Wireless Mechanical Gaming Keyboard',
@@ -224,7 +224,7 @@ export const products: Product[] = [
 export const newsItems: NewsItem[] = [
   {
     id: 'n1',
-    title: 'NexCore Launches Next-Gen DDR5-7200 Memory Series',
+    title: 'SQH Launches Next-Gen DDR5-7200 Memory Series',
     excerpt: 'Our latest DDR5 memory modules achieve breakthrough speeds of 7200MHz with ultra-tight CL34 timings, setting new benchmarks for enthusiast computing.',
     date: '2025-01-15',
     category: 'Product Launch',
@@ -233,7 +233,7 @@ export const newsItems: NewsItem[] = [
   {
     id: 'n2',
     title: 'Expanding Global Operations: New Warehouse in Rotterdam',
-    excerpt: 'To better serve our European partners, NexCore has opened a 15,000 sqm distribution center in Rotterdam, reducing delivery times by 40%.',
+    excerpt: 'To better serve our European partners, SQH has opened a 15,000 sqm distribution center in Rotterdam, reducing delivery times by 40%.',
     date: '2025-01-08',
     category: 'Company News',
     image: 'https://placehold.co/600x400/0a0e27/6c5ce7?text=Rotterdam+HQ',
@@ -248,7 +248,7 @@ export const newsItems: NewsItem[] = [
   },
   {
     id: 'n4',
-    title: 'NexCore Wins "Best PC Component Brand 2024" Award',
+    title: 'SQH Wins "Best PC Component Brand 2024" Award',
     excerpt: 'We are honored to receive the Best PC Component Brand award at the annual Global Tech Excellence Awards, recognizing our commitment to quality.',
     date: '2024-12-10',
     category: 'Awards',
@@ -257,7 +257,7 @@ export const newsItems: NewsItem[] = [
   {
     id: 'n5',
     title: 'Sustainability Report: Carbon Neutral Manufacturing by 2026',
-    excerpt: 'NexCore announces ambitious sustainability goals, including transitioning to 100% renewable energy in all manufacturing facilities by 2026.',
+    excerpt: 'SQH announces ambitious sustainability goals, including transitioning to 100% renewable energy in all manufacturing facilities by 2026.',
     date: '2024-11-28',
     category: 'Company News',
     image: 'https://placehold.co/600x400/0a0e27/00d4ff?text=Sustainability',
@@ -273,7 +273,7 @@ export const newsItems: NewsItem[] = [
 ];
 
 export const timelineData: TimelineItem[] = [
-  { year: '2008', title: 'Founded', description: 'NexCore Technology established in Shenzhen, China, starting with memory module manufacturing.' },
+  { year: '2008', title: 'Founded', description: 'SQH Technology established in Shenzhen, China, starting with memory module manufacturing.' },
   { year: '2011', title: 'First Export', description: 'Began international operations, exporting to Southeast Asian and Middle Eastern markets.' },
   { year: '2014', title: 'Product Line Expansion', description: 'Expanded into SSDs and graphics cards, becoming a full-range PC component manufacturer.' },
   { year: '2016', title: 'Global Reach', description: 'Reached 50+ countries, opened regional offices in Dubai and Los Angeles.' },

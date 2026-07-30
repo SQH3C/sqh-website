@@ -42,11 +42,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#00d4ff] to-[#6c5ce7] flex items-center justify-center font-display font-bold text-[#0a0e27] text-sm group-hover:shadow-[0_0_20px_rgba(0,212,255,0.5)] transition-shadow">
-              NX
+            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#00d4ff] to-[#6c5ce7] flex items-center justify-center font-display font-bold text-[#0a0e27] text-xs group-hover:shadow-[0_0_20px_rgba(0,212,255,0.5)] transition-shadow">
+              SQH
             </div>
             <span className="font-display font-bold text-lg text-white tracking-wider">
-              NEX<span className="text-[#00d4ff]">CORE</span>
+              S<span className="text-[#00d4ff]">QH</span>
             </span>
           </Link>
 

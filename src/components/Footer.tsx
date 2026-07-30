@@ -33,11 +33,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#00d4ff] to-[#6c5ce7] flex items-center justify-center font-display font-bold text-[#0a0e27] text-sm">
-                NX
+              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#00d4ff] to-[#6c5ce7] flex items-center justify-center font-display font-bold text-[#0a0e27] text-xs">
+                SQH
               </div>
               <span className="font-display font-bold text-lg text-white tracking-wider">
-                NEX<span className="text-[#00d4ff]">CORE</span>
+                S<span className="text-[#00d4ff]">QH</span>
               </span>
             </div>
             <p className="text-[#8892b0] text-sm leading-relaxed mb-4">
@@ -74,7 +74,7 @@ export default function Footer() {
                 <svg className="w-4 h-4 text-[#00d4ff] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                sales@nexcore-tech.com
+                sales@sqhpc.com
               </li>
               <li className="flex items-center gap-2">
                 <svg className="w-4 h-4 text-[#00d4ff] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -108,7 +108,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[#8892b0] text-xs">
-            &copy; 2025 NexCore Technology. {t('footer.rights')}.
+            &copy; 2025 SQH (sqhpc.com). {t('footer.rights')}.
           </p>
           <div className="flex gap-6">
             <a href="#" className="text-[#8892b0] text-xs hover:text-[#00d4ff] transition-colors">{t('footer.privacy')}</a>

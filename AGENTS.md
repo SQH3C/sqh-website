@@ -1,7 +1,7 @@
 # AGENTS.md
 
 ## 项目概览
-NexCore Technology - 外贸企业展示型官网，电脑配件行业，深色科技风主题。
+SQH (sqhpc.com) - 外贸企业展示型官网，电脑配件行业，深色科技风主题。
 
 ## 技术栈
 - **Framework**: Next.js 16 (App Router)
