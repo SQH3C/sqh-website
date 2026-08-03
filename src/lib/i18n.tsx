@@ -45,15 +45,14 @@ const translations: TranslationMap = {
   'products.viewDetails': { en: 'View Details', zh: '查看详情', ja: '詳細を見る', es: 'Ver Detalles', ar: 'عرض التفاصيل' },
 
   // Product categories
-  'cat.cpu': { en: 'CPU', zh: '处理器', ja: 'CPU', es: 'CPU', ar: 'المعالج' },
-  'cat.memory': { en: 'Memory', zh: '内存', ja: 'メモリ', es: 'Memoria', ar: 'الذاكرة' },
-  'cat.storage': { en: 'Storage', zh: '硬盘', ja: 'ストレージ', es: 'Almacenamiento', ar: 'التخزين' },
-  'cat.gpu': { en: 'Graphics Card', zh: '显卡', ja: 'グラフィック', es: 'Tarjeta Gráfica', ar: 'كرت الشاشة' },
-  'cat.motherboard': { en: 'Motherboard', zh: '主板', ja: 'マザーボード', es: 'Placa Base', ar: 'اللوحة الأم' },
-  'cat.psu': { en: 'Power Supply', zh: '电源', ja: '電源', es: 'Fuente de Poder', ar: 'مزود الطاقة' },
-  'cat.case': { en: 'PC Case', zh: '机箱', ja: 'PCケース', es: 'Gabinete', ar: 'صندوق الحاسوب' },
-  'cat.cooling': { en: 'Cooling', zh: '散热器', ja: '冷却', es: 'Refrigeración', ar: 'التبريد' },
-  'cat.peripheral': { en: 'Peripheral', zh: '外设', ja: '周辺機器', es: 'Periféricos', ar: 'الأجهزة الطرفية' },
+  'cat.cpu-cooler': { en: 'CPU Cooler', zh: 'CPU散热器', ja: 'CPUクーラー', es: 'Enfriador CPU', ar: 'مبرد المعالج' },
+  'cat.pc-case': { en: 'PC Case', zh: '机箱', ja: 'PCケース', es: 'Gabinete PC', ar: 'صندوق الحاسوب' },
+  'cat.power-supply': { en: 'Power Supply', zh: '电源', ja: '電源', es: 'Fuente de Poder', ar: 'مزود الطاقة' },
+  'cat.laptop-cooling': { en: 'Laptop Cooling', zh: '笔记本散热', ja: 'ノートPC冷却', es: 'Enfriador Laptop', ar: 'تبريد اللابتوب' },
+  'cat.accessories': { en: 'Accessories', zh: '配件', ja: 'アクセサリー', es: 'Accesorios', ar: 'الإكسسوارات' },
+  'sub.air-cooler': { en: 'Air Cooler', zh: '风冷散热器', ja: '空冷クーラー', es: 'Refrigeración por Aire', ar: 'مبرد هوائي' },
+  'sub.aio-water-cooler': { en: 'AIO Water Cooler', zh: '一体式水冷', ja: '簡易水冷', es: 'Refrigeración Líquida AIO', ar: 'مبرد مائي AIO' },
+  'sub.pc-case-fan': { en: 'PC Case Fan', zh: '机箱风扇', ja: 'ケースファン', es: 'Ventilador de Gabinete', ar: 'مروحة الصندوق' },
 
   // About
   'about.title': { en: 'About SQH', zh: '关于SQH', ja: 'SQHについて', es: 'Sobre SQH', ar: 'عن SQH' },

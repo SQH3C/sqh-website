@@ -17,9 +17,9 @@ export default function HomePage() {
 
   const featuredProducts = [
     products.find(p => p.id === 'cool-02')!,
-    products.find(p => p.id === 'cpu-01')!,
-    products.find(p => p.id === 'gpu-01')!,
-    products.find(p => p.id === 'mem-01')!,
+    products.find(p => p.id === 'cool-air-01')!,
+    products.find(p => p.id === 'case-01')!,
+    products.find(p => p.id === 'psu-01')!,
   ].filter(Boolean);
 
   return (

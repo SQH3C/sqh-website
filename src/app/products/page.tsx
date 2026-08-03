@@ -3,27 +3,32 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { useI18n } from '@/lib/i18n';
-import { products, productCategories } from '@/lib/data';
+import { products, productCategories, productSubcategories } from '@/lib/data';
 
 export default function ProductsPage() {
   const { t } = useI18n();
   const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [activeSubcategory, setActiveSubcategory] = useState<string>('all');
   const [expandedProduct, setExpandedProduct] = useState<string | null>(null);
   const [galleryIndex, setGalleryIndex] = useState<Record<string, number>>({});
 
   useEffect(() => {
     const cat = searchParams.get('category');
+    const sub = searchParams.get('sub');
     if (cat && productCategories.includes(cat as typeof productCategories[number])) {
       setActiveCategory(cat);
+      if (sub) setActiveSubcategory(sub);
     }
   }, [searchParams]);
 
-  const filteredProducts = activeCategory === 'all'
-    ? products
-    : products.filter((p) => p.category === activeCategory);
+  const filteredProducts = products.filter((p) => {
+    if (activeCategory !== 'all' && p.category !== activeCategory) return false;
+    if (activeSubcategory !== 'all' && p.subcategory !== activeSubcategory) return false;
+    return true;
+  });
 
-  const categories = ['all', ...productCategories] as const;
+  const currentSubs = activeCategory !== 'all' ? (productSubcategories[activeCategory] || []) : [];
 
   return (
     <div className="pt-24 pb-16">
@@ -39,23 +44,64 @@ export default function ProductsPage() {
       </section>
 
       {/* Category Filter */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
         <div className="flex flex-wrap justify-center gap-2">
-          {categories.map((cat) => (
+          <button
+            onClick={() => { setActiveCategory('all'); setActiveSubcategory('all'); }}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+              activeCategory === 'all'
+                ? 'bg-gradient-to-r from-[#00d4ff] to-[#6c5ce7] text-[#0a0e27] shadow-[0_0_20px_rgba(0,212,255,0.3)]'
+                : 'glass text-[#8892b0] hover:text-white hover:border-[#00d4ff]/30'
+            }`}
+          >
+            {t('products.all')}
+          </button>
+          {productCategories.map((cat) => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => { setActiveCategory(cat); setActiveSubcategory('all'); }}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                 activeCategory === cat
                   ? 'bg-gradient-to-r from-[#00d4ff] to-[#6c5ce7] text-[#0a0e27] shadow-[0_0_20px_rgba(0,212,255,0.3)]'
                   : 'glass text-[#8892b0] hover:text-white hover:border-[#00d4ff]/30'
               }`}
             >
-              {cat === 'all' ? t('products.all') : t(`cat.${cat}`)}
+              {t(`cat.${cat}`)}
             </button>
           ))}
         </div>
       </section>
+
+      {/* Subcategory Filter */}
+      {currentSubs.length > 0 && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+          <div className="flex flex-wrap justify-center gap-2">
+            <button
+              onClick={() => setActiveSubcategory('all')}
+              className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all duration-200 ${
+                activeSubcategory === 'all'
+                  ? 'bg-[#00d4ff]/20 text-[#00d4ff] border border-[#00d4ff]/30'
+                  : 'text-[#6b7fa3] hover:text-white border border-transparent'
+              }`}
+            >
+              {t('products.all')}
+            </button>
+            {currentSubs.map((sub) => (
+              <button
+                key={sub}
+                onClick={() => setActiveSubcategory(sub)}
+                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-all duration-200 ${
+                  activeSubcategory === sub
+                    ? 'bg-[#00d4ff]/20 text-[#00d4ff] border border-[#00d4ff]/30'
+                    : 'text-[#6b7fa3] hover:text-white border border-transparent'
+                }`}
+              >
+                {t(`sub.${sub}`)}
+              </button>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Product Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

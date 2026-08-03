@@ -24,15 +24,15 @@ export default function Navbar() {
   }, [pathname]);
 
   const categories = [
-    { key: 'cpu', label: t('cat.cpu') },
-    { key: 'memory', label: t('cat.memory') },
-    { key: 'storage', label: t('cat.storage') },
-    { key: 'gpu', label: t('cat.gpu') },
-    { key: 'motherboard', label: t('cat.motherboard') },
-    { key: 'psu', label: t('cat.psu') },
-    { key: 'case', label: t('cat.case') },
-    { key: 'cooling', label: t('cat.cooling') },
-    { key: 'peripheral', label: t('cat.peripheral') },
+    { key: 'cpu-cooler', label: t('cat.cpu-cooler'), subs: [
+      { key: 'air-cooler', label: t('sub.air-cooler') },
+      { key: 'aio-water-cooler', label: t('sub.aio-water-cooler') },
+      { key: 'pc-case-fan', label: t('sub.pc-case-fan') },
+    ]},
+    { key: 'pc-case', label: t('cat.pc-case') },
+    { key: 'power-supply', label: t('cat.power-supply') },
+    { key: 'laptop-cooling', label: t('cat.laptop-cooling') },
+    { key: 'accessories', label: t('cat.accessories') },
   ];
 
   const navLinks = [
@@ -89,7 +89,7 @@ export default function Navbar() {
                   <div
                     onMouseEnter={() => setProductsOpen(true)}
                     onMouseLeave={() => setProductsOpen(false)}
-                    className="absolute top-full left-0 mt-1 w-48 glass-strong rounded-lg overflow-hidden shadow-xl border border-white/10 py-2"
+                    className="absolute top-full left-0 mt-1 w-56 glass-strong rounded-lg overflow-hidden shadow-xl border border-white/10 py-2"
                   >
                     <Link
                       href="/products"
@@ -99,13 +99,27 @@ export default function Navbar() {
                     </Link>
                     <div className="border-t border-white/5 my-1" />
                     {categories.map((cat) => (
-                      <Link
-                        key={cat.key}
-                        href={`/products?category=${cat.key}`}
-                        className="block px-4 py-2 text-sm text-[#8892b0] hover:text-white hover:bg-white/5 transition-all"
-                      >
-                        {cat.label}
-                      </Link>
+                      <div key={cat.key}>
+                        <Link
+                          href={`/products?category=${cat.key}`}
+                          className="block px-4 py-2 text-sm text-[#8892b0] hover:text-white hover:bg-white/5 transition-all font-medium"
+                        >
+                          {cat.label}
+                        </Link>
+                        {'subs' in cat && cat.subs && (
+                          <div className="ml-4">
+                            {cat.subs.map((sub) => (
+                              <Link
+                                key={sub.key}
+                                href={`/products?category=${cat.key}&sub=${sub.key}`}
+                                className="block px-4 py-1.5 text-xs text-[#6b7fa3] hover:text-[#00d4ff] hover:bg-white/5 transition-all"
+                              >
+                                {sub.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 )}
@@ -190,13 +204,27 @@ export default function Navbar() {
                 {link.hasDropdown && (
                   <div className="pl-6 space-y-0.5">
                     {categories.map((cat) => (
-                      <Link
-                        key={cat.key}
-                        href={`/products?category=${cat.key}`}
-                        className="block px-4 py-2 text-xs text-[#8892b0] hover:text-[#00d4ff] transition-all"
-                      >
-                        {cat.label}
-                      </Link>
+                      <div key={cat.key}>
+                        <Link
+                          href={`/products?category=${cat.key}`}
+                          className="block px-4 py-2 text-xs text-[#8892b0] hover:text-[#00d4ff] transition-all font-medium"
+                        >
+                          {cat.label}
+                        </Link>
+                        {'subs' in cat && cat.subs && (
+                          <div className="pl-4">
+                            {cat.subs.map((sub) => (
+                              <Link
+                                key={sub.key}
+                                href={`/products?category=${cat.key}&sub=${sub.key}`}
+                                className="block px-4 py-1.5 text-[10px] text-[#6b7fa3] hover:text-[#00d4ff] transition-all"
+                              >
+                                {sub.label}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </div>
                     ))}
                   </div>
                 )}
