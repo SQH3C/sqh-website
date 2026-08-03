@@ -10,6 +10,7 @@ export default function ProductsPage() {
   const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [expandedProduct, setExpandedProduct] = useState<string | null>(null);
+  const [galleryIndex, setGalleryIndex] = useState<Record<string, number>>({});
 
   useEffect(() => {
     const cat = searchParams.get('category');
@@ -103,9 +104,37 @@ export default function ProductsPage() {
                   </a>
                 </div>
 
-                {/* Specs Panel */}
+                {/* Expanded Detail Panel */}
                 {expandedProduct === product.id && (
                   <div className="mt-4 pt-4 border-t border-white/10 animate-fade-in-up">
+                    {/* Multi-image Gallery */}
+                    {product.images && product.images.length > 1 && (
+                      <div className="mb-6">
+                        <div className="rounded-xl overflow-hidden mb-3 border border-white/10">
+                          <img
+                            src={product.images[galleryIndex[product.id] ?? 0]}
+                            alt={product.name}
+                            className="w-full h-64 object-contain bg-[#0a0e27]"
+                          />
+                        </div>
+                        <div className="flex gap-2 overflow-x-auto pb-2">
+                          {product.images.map((img, idx) => (
+                            <button
+                              key={idx}
+                              onClick={() => setGalleryIndex(prev => ({ ...prev, [product.id]: idx }))}
+                              className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+                                (galleryIndex[product.id] ?? 0) === idx
+                                  ? 'border-[#00d4ff]'
+                                  : 'border-white/10 hover:border-[#00d4ff]/50'
+                              }`}
+                            >
+                              <img src={img} alt={`${product.name} ${idx + 1}`} className="w-full h-full object-cover" />
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                    {/* Specs Table */}
                     <table className="w-full text-sm">
                       <tbody>
                         {Object.entries(product.specs).map(([key, value]) => (

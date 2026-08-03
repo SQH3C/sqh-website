@@ -15,7 +15,12 @@ export default function HomePage() {
     { value: 3000, suffix: '+', label: t('stats.clients') },
   ];
 
-  const featuredProducts = products.slice(0, 4);
+  const featuredProducts = [
+    products.find(p => p.id === 'cool-02')!,
+    products.find(p => p.id === 'cpu-01')!,
+    products.find(p => p.id === 'gpu-01')!,
+    products.find(p => p.id === 'mem-01')!,
+  ].filter(Boolean);
 
   return (
     <div>

@@ -3,8 +3,9 @@ export interface Product {
   name: string;
   category: string;
   image: string;
-  specs: Record<string, string>;
+  images?: string[];
   description: string;
+  specs: Record<string, string>;
 }
 
 export interface NewsItem {
@@ -201,6 +202,37 @@ export const products: Product[] = [
       'Socket': 'Intel/AMD Universal',
       'Tubing': 'Reinforced Rubber, 400mm',
       'RGB': 'ARGB + LCD Display',
+    },
+  },
+  {
+    id: 'cool-02',
+    name: 'SQH-A01-120B AIO Water Cooler',
+    category: 'cooling',
+    image: '/images/products/SQHA01_main.png',
+    description: '120mm All-in-One CPU Liquid Cooler',
+    images: [
+      '/images/products/SQHA01_main.png',
+      '/images/products/SQHA01_2.png',
+      '/images/products/SQHA01_3.png',
+      '/images/products/SQHA01_4.png',
+    ],
+    specs: {
+      'Fan Size': '120mm',
+      'Fan Speed': '800–1800 RPM',
+      'Pump Speed': '2400–3100 RPM',
+      'TDP': '150W',
+      'Noise Level': '23 dB (Max.)',
+      'Radiator Size': '154×120×27 mm',
+      'Pump Head': '72×72×54 mm',
+      'Tube Length': '320 mm',
+      'Socket (Intel)': 'LGA 115X / 1700 / 1851 / 1366',
+      'Socket (AMD)': 'AM3 / AM4 / AM5',
+      'LED Lighting': 'Fixed RGB',
+      'Fan Connector': '2510-3Pin',
+      'Pump Connector': '2510-4Pin',
+      'Voltage': 'DC 12V',
+      'MOQ': '500 pcs',
+      'Certifications': 'CE, FCC, RoHS',
     },
   },
   {
