@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useI18n } from '@/lib/i18n';
 import { products, productCategories, productSubcategories } from '@/lib/data';
@@ -10,8 +11,6 @@ export default function ProductsPage() {
   const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [activeSubcategory, setActiveSubcategory] = useState<string>('all');
-  const [expandedProduct, setExpandedProduct] = useState<string | null>(null);
-  const [galleryIndex, setGalleryIndex] = useState<Record<string, number>>({});
 
   useEffect(() => {
     const cat = searchParams.get('category');
@@ -107,9 +106,10 @@ export default function ProductsPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredProducts.map((product) => (
-            <div
+            <Link
               key={product.id}
-              className="glass rounded-xl overflow-hidden group hover:border-[#00d4ff]/30 transition-all duration-300 hover:-translate-y-1"
+              href={`/products/${product.id}`}
+              className="glass rounded-xl overflow-hidden group hover:border-[#00d4ff]/30 transition-all duration-300 hover:-translate-y-1 block"
             >
               <div className="relative h-48 overflow-hidden">
                 <img
@@ -130,71 +130,21 @@ export default function ProductsPage() {
                 <p className="text-[#8892b0] text-sm mb-4">{product.description}</p>
 
                 <div className="flex items-center justify-between">
-                  <button
-                    onClick={() => setExpandedProduct(expandedProduct === product.id ? null : product.id)}
-                    className="text-[#00d4ff] text-sm font-medium hover:underline flex items-center gap-1"
-                  >
-                    {t('products.specs')}
-                    <svg
-                      className={`w-4 h-4 transition-transform ${expandedProduct === product.id ? 'rotate-180' : ''}`}
-                      fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  <span className="text-[#00d4ff] text-sm font-medium flex items-center gap-1">
+                    {t('products.viewDetails')}
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
-                  </button>
-                  <a
-                    href="/contact"
+                  </span>
+                  <span
+                    onClick={(e) => { e.preventDefault(); }}
                     className="px-4 py-1.5 rounded-lg bg-gradient-to-r from-[#00d4ff] to-[#6c5ce7] text-[#0a0e27] text-sm font-semibold hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] transition-all"
                   >
                     {t('products.inquiry')}
-                  </a>
+                  </span>
                 </div>
-
-                {/* Expanded Detail Panel */}
-                {expandedProduct === product.id && (
-                  <div className="mt-4 pt-4 border-t border-white/10 animate-fade-in-up">
-                    {/* Multi-image Gallery */}
-                    {product.images && product.images.length > 1 && (
-                      <div className="mb-6">
-                        <div className="rounded-xl overflow-hidden mb-3 border border-white/10">
-                          <img
-                            src={product.images[galleryIndex[product.id] ?? 0]}
-                            alt={product.name}
-                            className="w-full h-64 object-contain bg-[#0a0e27]"
-                          />
-                        </div>
-                        <div className="flex gap-2 overflow-x-auto pb-2">
-                          {product.images.map((img, idx) => (
-                            <button
-                              key={idx}
-                              onClick={() => setGalleryIndex(prev => ({ ...prev, [product.id]: idx }))}
-                              className={`flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 transition-all ${
-                                (galleryIndex[product.id] ?? 0) === idx
-                                  ? 'border-[#00d4ff]'
-                                  : 'border-white/10 hover:border-[#00d4ff]/50'
-                              }`}
-                            >
-                              <img src={img} alt={`${product.name} ${idx + 1}`} className="w-full h-full object-cover" />
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    {/* Specs Table */}
-                    <table className="w-full text-sm">
-                      <tbody>
-                        {Object.entries(product.specs).map(([key, value]) => (
-                          <tr key={key} className="border-b border-white/5 last:border-0">
-                            <td className="py-2 text-[#8892b0] pr-4 whitespace-nowrap">{key}</td>
-                            <td className="py-2 text-white font-medium">{value}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                )}
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

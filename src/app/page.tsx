@@ -119,7 +119,7 @@ export default function HomePage() {
                   </h3>
                   <p className="text-[#8892b0] text-sm mb-4">{product.description}</p>
                   <Link
-                    href="/products"
+                    href={`/products/${product.id}`}
                     className="inline-flex items-center gap-1.5 text-[#00d4ff] text-sm font-medium hover:gap-3 transition-all"
                   >
                     {t('products.viewDetails')}

@@ -43,6 +43,11 @@ const translations: TranslationMap = {
   'products.inquiry': { en: 'Inquiry', zh: '立即询价', ja: 'お問い合わせ', es: 'Consultar', ar: 'استفسار' },
   'products.specs': { en: 'Specifications', zh: '规格参数', ja: '仕様', es: 'Especificaciones', ar: 'المواصفات' },
   'products.viewDetails': { en: 'View Details', zh: '查看详情', ja: '詳細を見る', es: 'Ver Detalles', ar: 'عرض التفاصيل' },
+  'products.backToCatalog': { en: 'Back to Catalog', zh: '返回产品目录', ja: 'カタログに戻る', es: 'Volver al Catálogo', ar: 'العودة للكتالوج' },
+  'products.specifications': { en: 'Specifications', zh: '产品规格', ja: '製品仕様', es: 'Especificaciones', ar: 'المواصفات' },
+  'products.browseMore': { en: 'Browse More', zh: '浏览更多', ja: 'もっと見る', es: 'Ver Más', ar: 'تصفح المزيد' },
+  'products.detailedSpecs': { en: 'Detailed Specifications', zh: '详细规格参数', ja: '詳細仕様', es: 'Especificaciones Detalladas', ar: 'المواصفات التفصيلية' },
+  'products.relatedProducts': { en: 'Related Products', zh: '相关产品', ja: '関連製品', es: 'Productos Relacionados', ar: 'منتجات ذات صلة' },
 
   // Product categories
   'cat.cpu-cooler': { en: 'CPU Cooler', zh: 'CPU散热器', ja: 'CPUクーラー', es: 'Enfriador CPU', ar: 'مبرد المعالج' },
