@@ -11,6 +11,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -22,9 +23,21 @@ export default function Navbar() {
     setMobileOpen(false);
   }, [pathname]);
 
+  const categories = [
+    { key: 'cpu', label: t('cat.cpu') },
+    { key: 'memory', label: t('cat.memory') },
+    { key: 'storage', label: t('cat.storage') },
+    { key: 'gpu', label: t('cat.gpu') },
+    { key: 'motherboard', label: t('cat.motherboard') },
+    { key: 'psu', label: t('cat.psu') },
+    { key: 'case', label: t('cat.case') },
+    { key: 'cooling', label: t('cat.cooling') },
+    { key: 'peripheral', label: t('cat.peripheral') },
+  ];
+
   const navLinks = [
     { href: '/', label: t('nav.home') },
-    { href: '/products', label: t('nav.products') },
+    { href: '/products', label: t('nav.products'), hasDropdown: true },
     { href: '/about', label: t('nav.about') },
     { href: '/news', label: t('nav.news') },
     { href: '/contact', label: t('nav.contact') },
@@ -53,17 +66,50 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                  pathname === link.href
-                    ? 'text-[#00d4ff] bg-[rgba(0,212,255,0.1)]'
-                    : 'text-[#8892b0] hover:text-white hover:bg-white/5'
-                }`}
-              >
-                {link.label}
-              </Link>
+              <div key={link.href} className="relative">
+                <Link
+                  href={link.href}
+                  onMouseEnter={() => link.hasDropdown && setProductsOpen(true)}
+                  onMouseLeave={() => link.hasDropdown && setProductsOpen(false)}
+                  className={`flex items-center gap-1 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    pathname === link.href
+                      ? 'text-[#00d4ff] bg-[rgba(0,212,255,0.1)]'
+                      : 'text-[#8892b0] hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  {link.label}
+                  {link.hasDropdown && (
+                    <svg className={`w-3 h-3 transition-transform ${productsOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  )}
+                </Link>
+                {/* Products Dropdown */}
+                {link.hasDropdown && productsOpen && (
+                  <div
+                    onMouseEnter={() => setProductsOpen(true)}
+                    onMouseLeave={() => setProductsOpen(false)}
+                    className="absolute top-full left-0 mt-1 w-48 glass-strong rounded-lg overflow-hidden shadow-xl border border-white/10 py-2"
+                  >
+                    <Link
+                      href="/products"
+                      className="block px-4 py-2 text-sm text-[#00d4ff] hover:bg-white/5 transition-all font-medium"
+                    >
+                      {t('nav.products')} →
+                    </Link>
+                    <div className="border-t border-white/5 my-1" />
+                    {categories.map((cat) => (
+                      <Link
+                        key={cat.key}
+                        href={`/products?category=${cat.key}`}
+                        className="block px-4 py-2 text-sm text-[#8892b0] hover:text-white hover:bg-white/5 transition-all"
+                      >
+                        {cat.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 
@@ -130,17 +176,31 @@ export default function Navbar() {
         <div className="lg:hidden glass-strong border-t border-white/5">
           <div className="px-4 py-4 space-y-1">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${
-                  pathname === link.href
-                    ? 'text-[#00d4ff] bg-[rgba(0,212,255,0.1)]'
-                    : 'text-[#8892b0] hover:text-white hover:bg-white/5'
-                }`}
-              >
-                {link.label}
-              </Link>
+              <div key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all ${
+                    pathname === link.href
+                      ? 'text-[#00d4ff] bg-[rgba(0,212,255,0.1)]'
+                      : 'text-[#8892b0] hover:text-white hover:bg-white/5'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+                {link.hasDropdown && (
+                  <div className="pl-6 space-y-0.5">
+                    {categories.map((cat) => (
+                      <Link
+                        key={cat.key}
+                        href={`/products?category=${cat.key}`}
+                        className="block px-4 py-2 text-xs text-[#8892b0] hover:text-[#00d4ff] transition-all"
+                      >
+                        {cat.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
             <div className="pt-3 border-t border-white/5">
               <div className="flex flex-wrap gap-2 mb-3">

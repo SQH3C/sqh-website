@@ -1,13 +1,22 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { useI18n } from '@/lib/i18n';
 import { products, productCategories } from '@/lib/data';
 
 export default function ProductsPage() {
   const { t } = useI18n();
+  const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [expandedProduct, setExpandedProduct] = useState<string | null>(null);
+
+  useEffect(() => {
+    const cat = searchParams.get('category');
+    if (cat && productCategories.includes(cat as typeof productCategories[number])) {
+      setActiveCategory(cat);
+    }
+  }, [searchParams]);
 
   const filteredProducts = activeCategory === 'all'
     ? products
