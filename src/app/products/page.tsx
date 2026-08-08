@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useI18n } from '@/lib/i18n';
 import { products, productCategories, productSubcategories } from '@/lib/data';
 
 export default function ProductsPage() {
   const { t } = useI18n();
+  const router = useRouter();
   const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [activeSubcategory, setActiveSubcategory] = useState<string>('all');
@@ -106,10 +107,10 @@ export default function ProductsPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredProducts.map((product) => (
-            <Link
+            <div
               key={product.id}
-              href={`/products/${product.id}`}
-              className="glass rounded-xl overflow-hidden group hover:border-[#00d4ff]/30 transition-all duration-300 hover:-translate-y-1 block"
+              onClick={() => router.push(`/products/${product.id}`)}
+              className="glass rounded-xl overflow-hidden group hover:border-[#00d4ff]/30 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
             >
               <div className="relative h-64 overflow-hidden bg-[#0a0e27]/50">
                 <img
@@ -144,7 +145,7 @@ export default function ProductsPage() {
                   </Link>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
