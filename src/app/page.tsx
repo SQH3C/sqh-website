@@ -16,10 +16,10 @@ export default function HomePage() {
   ];
 
   const featuredProducts = [
-    products.find(p => p.id === 'cool-02')!,
-    products.find(p => p.id === 'cool-air-01')!,
+    products.find(p => p.id === 'sqha02-360')!,
+    products.find(p => p.id === 'sqha01-120')!,
+    products.find(p => p.id === 'sqha02-240')!,
     products.find(p => p.id === 'case-01')!,
-    products.find(p => p.id === 'psu-01')!,
   ].filter(Boolean);
 
   return (
