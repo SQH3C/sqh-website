@@ -1,221 +1,108 @@
 'use client';
 
-import { useI18n } from '@/lib/i18n';
-import Link from 'next/link';
-import CountUp from '@/components/CountUp';
-import { products } from '@/lib/data';
+import { useState } from 'react';
 
 export default function HomePage() {
-  const { t } = useI18n();
+  const [emailCopied, setEmailCopied] = useState(false);
 
-  const stats = [
-    { value: 16, suffix: '+', label: t('stats.years') },
-    { value: 120, suffix: '+', label: t('stats.countries') },
-    { value: 50, suffix: '+', label: t('stats.products') },
-    { value: 3000, suffix: '+', label: t('stats.clients') },
-  ];
-
-  const featuredProducts = [
-    products.find(p => p.id === 'sqha02-360')!,
-    products.find(p => p.id === 'sqha01-120')!,
-    products.find(p => p.id === 'sqha02-240')!,
-    products.find(p => p.id === 'case-01')!,
-  ].filter(Boolean);
+  const copyEmail = () => {
+    navigator.clipboard.writeText('sales@sqh3c.com');
+    setEmailCopied(true);
+    setTimeout(() => setEmailCopied(false), 2000);
+  };
 
   return (
-    <div>
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Gradient orbs */}
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-[#00d4ff]/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-[#6c5ce7]/10 rounded-full blur-[120px]" />
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#00d4ff]/8 rounded-full blur-[150px]" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#6c5ce7]/8 rounded-full blur-[150px]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,212,255,0.03)_0%,transparent_70%)]" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 pt-20">
-          <div className="animate-fade-in-up">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#00d4ff]/20 bg-[#00d4ff]/5 text-[#00d4ff] text-sm mb-8">
-              <span className="w-2 h-2 rounded-full bg-[#00d4ff] animate-pulse" />
-              PC Components Manufacturer & Exporter
-            </div>
+      {/* Grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: 'linear-gradient(rgba(0,212,255,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.3) 1px, transparent 1px)',
+          backgroundSize: '60px 60px',
+        }}
+      />
 
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold tracking-tight mb-6">
-              <span className="text-white">{t('hero.title').split(' ')[0]} </span>
-              <span className="gradient-text">{t('hero.title').split(' ').slice(1).join(' ')}</span>
-            </h1>
-
-            <p className="max-w-3xl mx-auto text-lg sm:text-xl text-[#8892b0] leading-relaxed mb-10">
-              {t('hero.subtitle')}
-            </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="/contact"
-                className="px-8 py-3.5 rounded-lg bg-gradient-to-r from-[#00d4ff] to-[#6c5ce7] text-[#0a0e27] font-bold text-base hover:shadow-[0_0_40px_rgba(0,212,255,0.4)] transition-all duration-300 hover:-translate-y-0.5"
-              >
-                {t('hero.getQuote')}
-              </Link>
-              <Link
-                href="/products"
-                className="px-8 py-3.5 rounded-lg border border-[#00d4ff]/30 text-[#00d4ff] font-semibold text-base hover:bg-[#00d4ff]/10 hover:border-[#00d4ff]/50 transition-all duration-300 hover:-translate-y-0.5"
-              >
-                {t('hero.browseProducts')}
-              </Link>
-            </div>
-          </div>
-
-          {/* Stats */}
-          <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, i) => (
-              <div
-                key={i}
-                className="glass rounded-xl p-6 text-center hover:border-[#00d4ff]/30 transition-all duration-300 group"
-              >
-                <div className="text-3xl sm:text-4xl font-display font-bold text-[#00d4ff] mb-2 group-hover:glow-text-cyan transition-all">
-                  <CountUp end={stat.value} suffix={stat.suffix} />
-                </div>
-                <div className="text-[#8892b0] text-sm">{stat.label}</div>
-              </div>
-            ))}
+      <div className="relative z-10 max-w-3xl mx-auto px-4 text-center">
+        {/* Logo */}
+        <div className="mb-8">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-[#00d4ff]/20 to-[#6c5ce7]/20 border border-[#00d4ff]/30 mb-6">
+            <span className="text-2xl font-display font-bold bg-gradient-to-r from-[#00d4ff] to-[#6c5ce7] bg-clip-text text-transparent">
+              SQH
+            </span>
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 rounded-full border-2 border-[#00d4ff]/30 flex items-start justify-center p-1.5">
-            <div className="w-1.5 h-3 rounded-full bg-[#00d4ff]/50 animate-pulse" />
-          </div>
-        </div>
-      </section>
+        {/* Coming Soon */}
+        <h1 className="text-5xl sm:text-7xl font-display font-bold text-white mb-4 tracking-tight">
+          Coming <span className="bg-gradient-to-r from-[#00d4ff] to-[#6c5ce7] bg-clip-text text-transparent">Soon</span>
+        </h1>
 
-      {/* Featured Products */}
-      <section className="py-24 relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-4">
-              {t('products.title')}
-            </h2>
-            <p className="text-[#8892b0] max-w-2xl mx-auto">{t('products.subtitle')}</p>
-          </div>
+        <p className="text-[#8892b0] text-lg sm:text-xl max-w-xl mx-auto mb-4">
+          Our new website is under construction.
+        </p>
+        <p className="text-[#6b7fa3] text-base sm:text-lg max-w-xl mx-auto mb-12">
+          We are working hard to bring you the best PC components shopping experience.
+        </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product) => (
-              <div
-                key={product.id}
-                className="glass rounded-xl overflow-hidden group hover:border-[#00d4ff]/30 transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="relative h-64 overflow-hidden bg-[#0a0e27]/50">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-5">
-                  <div className="inline-block px-2.5 py-1 rounded-md bg-[#00d4ff]/10 border border-[#00d4ff]/20 text-[#00d4ff] text-xs font-medium mb-3">
-                    {t(`cat.${product.category}`)}
-                  </div>
-                  <h3 className="text-white font-semibold text-base mb-1 group-hover:text-[#00d4ff] transition-colors">
-                    {product.name}
-                  </h3>
-                  <p className="text-[#8892b0] text-sm mb-4 line-clamp-2">{product.description}</p>
-                  <Link
-                    href={`/products/${product.id}`}
-                    className="inline-flex items-center gap-1.5 text-[#00d4ff] text-sm font-medium hover:gap-3 transition-all"
-                  >
-                    {t('products.viewDetails')}
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Contact Info */}
+        <div className="glass rounded-2xl p-8 max-w-lg mx-auto mb-8">
+          <h2 className="text-white font-semibold text-lg mb-6">Get In Touch</h2>
 
-          <div className="text-center mt-12">
-            <Link
-              href="/products"
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-lg border border-[#00d4ff]/30 text-[#00d4ff] font-semibold hover:bg-[#00d4ff]/10 transition-all"
-            >
-              {t('hero.browseProducts')}
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="py-24 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00d4ff]/[0.02] to-transparent" />
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-4">
-              Why Choose <span className="gradient-text">SQH</span>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
-                title: 'Quality Assured',
-                desc: 'ISO 9001 certified with rigorous QC processes. Every product undergoes 100+ stress tests before shipping.',
-              },
-              {
-                icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
-                title: 'Global Reach',
-                desc: 'Serving 120+ countries with regional warehouses for fast delivery. Local support teams in key markets.',
-              },
-              {
-                icon: 'M13 10V3L4 14h7v7l9-11h-7z',
-                title: 'Cutting-Edge R&D',
-                desc: '200+ patents in thermal management and power delivery. Dedicated R&D center with 100+ engineers.',
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="glass rounded-xl p-8 text-center group hover:border-[#00d4ff]/30 transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="w-14 h-14 mx-auto mb-5 rounded-xl bg-gradient-to-br from-[#00d4ff]/20 to-[#6c5ce7]/20 flex items-center justify-center group-hover:shadow-[0_0_30px_rgba(0,212,255,0.2)] transition-shadow">
-                  <svg className="w-7 h-7 text-[#00d4ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={item.icon} />
+          <div className="space-y-4">
+            {/* Email */}
+            <div className="flex items-center justify-between gap-4 p-3 rounded-xl bg-[#0a0e27]/60 border border-[#00d4ff]/10 hover:border-[#00d4ff]/30 transition-colors group">
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#00d4ff]/10 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-[#00d4ff]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-white font-semibold text-lg mb-3">{item.title}</h3>
-                <p className="text-[#8892b0] text-sm leading-relaxed">{item.desc}</p>
+                <div className="text-left min-w-0">
+                  <p className="text-[#6b7fa3] text-xs">Email</p>
+                  <p className="text-white text-sm font-medium truncate">sales@sqh3c.com</p>
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
+              <button
+                onClick={copyEmail}
+                className="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#00d4ff]/10 text-[#00d4ff] hover:bg-[#00d4ff]/20 transition-colors"
+              >
+                {emailCopied ? 'Copied!' : 'Copy'}
+              </button>
+            </div>
 
-      {/* CTA Section */}
-      <section className="py-24 relative">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="glass rounded-2xl p-12 sm:p-16 relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00d4ff]/50 to-transparent" />
-            <div className="absolute -top-20 -right-20 w-40 h-40 bg-[#6c5ce7]/20 rounded-full blur-[80px]" />
-            <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-[#00d4ff]/20 rounded-full blur-[80px]" />
-
-            <h2 className="text-3xl sm:text-4xl font-display font-bold text-white mb-4 relative z-10">
-              Ready to <span className="gradient-text">Power Up</span>?
-            </h2>
-            <p className="text-[#8892b0] max-w-xl mx-auto mb-8 relative z-10">
-              Get competitive pricing for bulk orders. Our team responds within 24 hours.
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg bg-gradient-to-r from-[#00d4ff] to-[#6c5ce7] text-[#0a0e27] font-bold hover:shadow-[0_0_40px_rgba(0,212,255,0.4)] transition-all duration-300 relative z-10"
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/8613800138000"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 p-3 rounded-xl bg-[#0a0e27]/60 border border-[#00d4ff]/10 hover:border-[#25D366]/40 transition-colors group"
             >
-              {t('hero.getQuote')}
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#25D366]/10 flex items-center justify-center">
+                <svg className="w-5 h-5 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+              </div>
+              <div className="text-left min-w-0">
+                <p className="text-[#6b7fa3] text-xs">WhatsApp</p>
+                <p className="text-white text-sm font-medium">Chat with us</p>
+              </div>
+              <svg className="w-4 h-4 text-[#6b7fa3] ml-auto flex-shrink-0 group-hover:text-[#25D366] transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
-            </Link>
+            </a>
           </div>
         </div>
-      </section>
+
+        {/* Footer */}
+        <p className="text-[#4a5568] text-sm">
+          &copy; 2025 SQH (sqh3c.com). All rights reserved.
+        </p>
+      </div>
     </div>
   );
 }
