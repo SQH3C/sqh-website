@@ -111,23 +111,22 @@ export default function ProductsPage() {
               href={`/products/${product.id}`}
               className="glass rounded-xl overflow-hidden group hover:border-[#00d4ff]/30 transition-all duration-300 hover:-translate-y-1 block"
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-64 overflow-hidden bg-[#0a0e27]/50">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e27] to-transparent opacity-60" />
-                <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-[#00d4ff]/10 border border-[#00d4ff]/20 text-[#00d4ff] text-xs font-medium">
-                  {t(`cat.${product.category}`)}
-                </div>
               </div>
 
               <div className="p-5">
+                <div className="inline-block px-2.5 py-1 rounded-md bg-[#00d4ff]/10 border border-[#00d4ff]/20 text-[#00d4ff] text-xs font-medium mb-3">
+                  {t(`cat.${product.category}`)}
+                </div>
                 <h3 className="text-white font-semibold text-base mb-1 group-hover:text-[#00d4ff] transition-colors">
                   {product.name}
                 </h3>
-                <p className="text-[#8892b0] text-sm mb-4">{product.description}</p>
+                <p className="text-[#8892b0] text-sm mb-4 line-clamp-2">{product.description}</p>
 
                 <div className="flex items-center justify-between">
                   <span className="text-[#00d4ff] text-sm font-medium flex items-center gap-1">
@@ -136,12 +135,13 @@ export default function ProductsPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>
                   </span>
-                  <span
-                    onClick={(e) => { e.preventDefault(); }}
+                  <Link
+                    href="/contact"
+                    onClick={(e) => e.stopPropagation()}
                     className="px-4 py-1.5 rounded-lg bg-gradient-to-r from-[#00d4ff] to-[#6c5ce7] text-[#0a0e27] text-sm font-semibold hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] transition-all"
                   >
                     {t('products.inquiry')}
-                  </span>
+                  </Link>
                 </div>
               </div>
             </Link>

@@ -102,22 +102,21 @@ export default function HomePage() {
                 key={product.id}
                 className="glass rounded-xl overflow-hidden group hover:border-[#00d4ff]/30 transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-64 overflow-hidden bg-[#0a0e27]/50">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-contain p-4 group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0e27] to-transparent opacity-60" />
-                  <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-[#00d4ff]/10 border border-[#00d4ff]/20 text-[#00d4ff] text-xs font-medium">
-                    {t(`cat.${product.category}`)}
-                  </div>
                 </div>
                 <div className="p-5">
+                  <div className="inline-block px-2.5 py-1 rounded-md bg-[#00d4ff]/10 border border-[#00d4ff]/20 text-[#00d4ff] text-xs font-medium mb-3">
+                    {t(`cat.${product.category}`)}
+                  </div>
                   <h3 className="text-white font-semibold text-base mb-1 group-hover:text-[#00d4ff] transition-colors">
                     {product.name}
                   </h3>
-                  <p className="text-[#8892b0] text-sm mb-4">{product.description}</p>
+                  <p className="text-[#8892b0] text-sm mb-4 line-clamp-2">{product.description}</p>
                   <Link
                     href={`/products/${product.id}`}
                     className="inline-flex items-center gap-1.5 text-[#00d4ff] text-sm font-medium hover:gap-3 transition-all"
