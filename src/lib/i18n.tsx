@@ -51,6 +51,7 @@ const translations: TranslationMap = {
 
   // Product categories
   'cat.cpu-cooler': { en: 'CPU Cooler', zh: 'CPU散热器', ja: 'CPUクーラー', es: 'Enfriador CPU', ar: 'مبرد المعالج' },
+  'cat.server-cooler': { en: 'Server Cooler', zh: '服务器散热器', ja: 'サーバークーラー', es: 'Enfriador de Servidor', ar: 'مبرد الخادم' },
   'cat.pc-case': { en: 'PC Case', zh: '机箱', ja: 'PCケース', es: 'Gabinete PC', ar: 'صندوق الحاسوب' },
   'cat.power-supply': { en: 'Power Supply', zh: '电源', ja: '電源', es: 'Fuente de Poder', ar: 'مزود الطاقة' },
   'cat.laptop-cooling': { en: 'Laptop Cooling', zh: '笔记本散热', ja: 'ノートPC冷却', es: 'Enfriador Laptop', ar: 'تبريد اللابتوب' },
@@ -58,6 +59,8 @@ const translations: TranslationMap = {
   'sub.air-cooler': { en: 'Air Cooler', zh: '风冷散热器', ja: '空冷クーラー', es: 'Refrigeración por Aire', ar: 'مبرد هوائي' },
   'sub.aio-water-cooler': { en: 'AIO Water Cooler', zh: '一体式水冷', ja: '簡易水冷', es: 'Refrigeración Líquida AIO', ar: 'مبرد مائي AIO' },
   'sub.pc-case-fan': { en: 'PC Case Fan', zh: '机箱风扇', ja: 'ケースファン', es: 'Ventilador de Gabinete', ar: 'مروحة الصندوق' },
+  'sub.air-server-cooler': { en: 'Air Server Cooler', zh: '风冷服务器散热器', ja: '空冷サーバークーラー', es: 'Enfriador de Servidor por Aire', ar: 'مبرد خادم هوائي' },
+  'sub.water-server-cooler': { en: 'Water Server Cooler', zh: '水冷服务器散热器', ja: '水冷サーバークーラー', es: 'Enfriador de Servidor por Agua', ar: 'مبرد خادم مائي' },
 
   // About
   'about.title': { en: 'About SQH', zh: '关于SQH', ja: 'SQHについて', es: 'Sobre SQH', ar: 'عن SQH' },

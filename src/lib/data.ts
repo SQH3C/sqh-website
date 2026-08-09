@@ -25,15 +25,17 @@ export interface TimelineItem {
 }
 
 export const productCategories = [
-  'cpu-cooler', 'pc-case', 'power-supply', 'laptop-cooling', 'accessories'
+  'cpu-cooler', 'server-cooler', 'pc-case', 'power-supply', 'laptop-cooling', 'accessories'
 ] as const;
 
 export const productSubcategories: Record<string, string[]> = {
   'cpu-cooler': ['air-cooler', 'aio-water-cooler', 'pc-case-fan'],
+  'server-cooler': ['air-server-cooler', 'water-server-cooler'],
 };
 
 export const categoryIcons: Record<string, string> = {
   'cpu-cooler': 'Cpu',
+  'server-cooler': 'Server',
   'pc-case': 'Box',
   'power-supply': 'Zap',
   'laptop-cooling': 'Laptop',

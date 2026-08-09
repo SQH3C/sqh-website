@@ -29,6 +29,10 @@ export default function Navbar() {
       { key: 'aio-water-cooler', label: t('sub.aio-water-cooler') },
       { key: 'pc-case-fan', label: t('sub.pc-case-fan') },
     ]},
+    { key: 'server-cooler', label: t('cat.server-cooler'), subs: [
+      { key: 'air-server-cooler', label: t('sub.air-server-cooler') },
+      { key: 'water-server-cooler', label: t('sub.water-server-cooler') },
+    ]},
     { key: 'pc-case', label: t('cat.pc-case') },
     { key: 'power-supply', label: t('cat.power-supply') },
     { key: 'laptop-cooling', label: t('cat.laptop-cooling') },
