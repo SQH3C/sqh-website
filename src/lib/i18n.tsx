@@ -25,8 +25,12 @@ const translations: TranslationMap = {
   'nav.onlineService': { en: 'Online Service', zh: '在线客服', ja: 'オンライン', es: 'Servicio Online', ar: 'خدمة مباشرة' },
 
   // Hero
-  'hero.title': { en: 'Next-Gen PC Components', zh: '下一代电脑配件', ja: '次世代PCパーツ', es: 'Componentes PC de Nueva Generación', ar: 'مكونات الجيل القادم' },
+  'hero.badge': { en: 'Professional PC Components Manufacturer', zh: '专业电脑配件制造商', ja: 'プロフェッショナルPC部品メーカー', es: 'Fabricante Profesional de Componentes PC', ar: 'مصنع مكونات الحاسوب المحترف' },
+  'hero.title1': { en: 'NEXT-GEN', zh: '下一代', ja: '次世代', es: 'NUEVA GENERACIÓN', ar: 'الجيل القادم' },
+  'hero.title2': { en: 'PC COMPONENTS', zh: '电脑配件', ja: 'PCパーツ', es: 'COMPONENTES PC', ar: 'مكونات الحاسوب' },
   'hero.subtitle': { en: 'Global leader in high-performance PC hardware manufacturing & export. Powering 120+ countries with cutting-edge technology.', zh: '全球高性能电脑硬件制造与出口领导者，为120多个国家提供尖端技术。', ja: '高性能PCハードウェアのグローバルリーダー。120カ国以上に最先端技術を提供。', es: 'Líder global en fabricación y exportación de hardware PC de alto rendimiento.', ar: 'رائد عالمي في تصنيع وتصدير مكونات الحاسوب عالية الأداء.' },
+  'hero.cta1': { en: 'Get Quote', zh: '获取报价', ja: '見積もり依頼', es: 'Cotizar', ar: 'طلب عرض سعر' },
+  'hero.cta2': { en: 'Browse Products', zh: '浏览产品', ja: '製品を見る', es: 'Ver Productos', ar: 'تصفح المنتجات' },
   'hero.browseProducts': { en: 'Browse Products', zh: '浏览产品', ja: '製品を見る', es: 'Ver Productos', ar: 'تصفح المنتجات' },
   'hero.getQuote': { en: 'Get Quote', zh: '获取报价', ja: '見積もり依頼', es: 'Cotizar', ar: 'طلب عرض سعر' },
 
@@ -35,6 +39,14 @@ const translations: TranslationMap = {
   'stats.countries': { en: 'Countries Served', zh: '合作国家', ja: '取引国数', es: 'Países Atendidos', ar: 'دولة نخدمها' },
   'stats.products': { en: 'Product Lines', zh: '产品线', ja: '製品ライン', es: 'Líneas de Productos', ar: 'خط إنتاج' },
   'stats.clients': { en: 'Global Clients', zh: '全球客户', ja: 'グローバル顧客', es: 'Clientes Globales', ar: 'عميل عالمي' },
+
+  // Home
+  'home.featuredTitle': { en: 'Featured Products', zh: '精选产品', ja: '注目製品', es: 'Productos Destacados', ar: 'منتجات مميزة' },
+  'home.featuredSubtitle': { en: 'Discover our most popular PC components trusted by professionals worldwide', zh: '探索全球专业人士信赖的热门电脑配件', ja: '世界中のプロフェッショナルに信頼される人気PCパーツ', es: 'Descubre nuestros componentes PC más populares', ar: 'اكتشف مكونات الحاسوب الأكثر شعبية' },
+  'home.viewAll': { en: 'View All Products', zh: '查看全部产品', ja: '全製品を見る', es: 'Ver Todos los Productos', ar: 'عرض جميع المنتجات' },
+  'home.ctaTitle': { en: 'Ready to Build Your Next System?', zh: '准备好打造你的下一套系统了吗？', ja: '次のシステムを構築する準備はできましたか？', es: '¿Listo para Construir tu Próximo Sistema?', ar: 'هل أنت مستعد لبناء نظامك التالي؟' },
+  'home.ctaSubtitle': { en: 'Contact our team for custom solutions, bulk pricing, and technical support', zh: '联系我们的团队获取定制方案、批量报价和技术支持', ja: 'カスタムソリューション、大量注文価格、技術サポートについてはお問い合わせください', es: 'Contacta a nuestro equipo para soluciones personalizadas', ar: 'تواصل مع فريقنا للحصول على حلول مخصصة' },
+  'home.ctaButton': { en: 'Contact Us', zh: '联系我们', ja: 'お問い合わせ', es: 'Contáctenos', ar: 'اتصل بنا' },
 
   // Products
   'products.title': { en: 'Product Catalog', zh: '产品目录', ja: '製品カタログ', es: 'Catálogo de Productos', ar: 'كتالوج المنتجات' },
