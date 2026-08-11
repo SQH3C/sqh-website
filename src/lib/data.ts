@@ -636,7 +636,14 @@ export const products: Product[] = [
     name: 'SQH-A07-360B AIO Water Cooler 360mm',
     category: 'cpu-cooler',
     subcategory: 'aio-water-cooler',
-    image: 'https://placehold.co/400x300/0a0e27/00d4ff?text=SQHA07-360',
+    image: '/images/products/SQHA07-360B_main.png',
+    images: [
+      '/images/products/SQHA07-360B_main.png',
+      '/images/products/SQHA07-360W_main.png',
+      '/images/products/SQHA07-360_2.png',
+      '/images/products/SQHA07-360_3.png',
+      '/images/products/SQHA07-360_4.png',
+    ],
     description: '360mm AIO Liquid Cooler, Ultimate Cooling Solution, ARGB PWM Fans',
     specs: {
       'Fan Size': '360mm (3x 120mm)',
