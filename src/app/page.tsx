@@ -9,7 +9,7 @@ export default function HomePage() {
   const { t } = useI18n();
 
   const featuredProducts = products.filter(p =>
-    ['sqha02-360', 'sqha01-120', 'sqha02-240', 'case-01'].includes(p.id)
+    ['sqha02-360', 'sqha04-360', 'sqha01-120', 'case-01'].includes(p.id)
   );
 
   return (
