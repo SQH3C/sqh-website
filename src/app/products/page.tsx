@@ -1,12 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useI18n } from '@/lib/i18n';
 import { products, productCategories, productSubcategories } from '@/lib/data';
 
-export default function ProductsPage() {
+function ProductsContent() {
   const { t } = useI18n();
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -156,5 +156,17 @@ export default function ProductsPage() {
         )}
       </section>
     </div>
+  );
+}
+
+export default function ProductsPage() {
+  return (
+    <Suspense fallback={
+      <div className="pt-24 pb-16 min-h-screen flex items-center justify-center">
+        <div className="text-[#00d4ff] text-xl">Loading...</div>
+      </div>
+    }>
+      <ProductsContent />
+    </Suspense>
   );
 }
