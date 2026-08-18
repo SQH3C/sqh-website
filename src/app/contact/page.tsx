@@ -7,6 +7,7 @@ import { productCategories } from '@/lib/data';
 export default function ContactPage() {
   const { t, locale } = useI18n();
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [form, setForm] = useState({
     name: '',
@@ -28,10 +29,41 @@ export default function ContactPage() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validate()) {
-      setSubmitted(true);
+    if (!validate()) return;
+    
+    setSubmitting(true);
+    
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/ammie.lin@sqh3c.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          company: form.company,
+          country: form.country,
+          category: form.category,
+          quantity: form.quantity,
+          message: form.message,
+          _subject: `New Inquiry from ${form.name} - ${form.company || 'Unknown Company'}`,
+          _template: 'table',
+        }),
+      });
+      
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        alert('Submission failed. Please try again or contact us directly.');
+      }
+    } catch (error) {
+      alert('Network error. Please try again.');
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -182,9 +214,10 @@ export default function ContactPage() {
 
               <button
                 type="submit"
-                className="mt-6 w-full sm:w-auto px-8 py-3 rounded-lg bg-gradient-to-r from-[#00d4ff] to-[#6c5ce7] text-[#0a0e27] font-bold hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] transition-all duration-300"
+                disabled={submitting}
+                className="mt-6 w-full sm:w-auto px-8 py-3 rounded-lg bg-gradient-to-r from-[#00d4ff] to-[#6c5ce7] text-[#0a0e27] font-bold hover:shadow-[0_0_30px_rgba(0,212,255,0.4)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {t('contact.submit')}
+                {submitting ? t('contact.submitting') || 'Sending...' : t('contact.submit')}
               </button>
             </form>
           </div>

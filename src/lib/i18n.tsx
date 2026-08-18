@@ -98,6 +98,7 @@ const translations: TranslationMap = {
   'contact.quantity': { en: 'Estimated Quantity', zh: '需求数量', ja: '予定数量', es: 'Cantidad Estimada', ar: 'الكمية المقدرة' },
   'contact.message': { en: 'Message', zh: '留言', ja: 'メッセージ', es: 'Mensaje', ar: 'الرسالة' },
   'contact.submit': { en: 'Submit Inquiry', zh: '提交询盘', ja: '送信', es: 'Enviar Consulta', ar: 'إرسال الاستفسار' },
+  'contact.submitting': { en: 'Sending...', zh: '发送中...', ja: '送信中...', es: 'Enviando...', ar: 'جارٍ الإرسال...' },
   'contact.success': { en: 'Thank you! Your inquiry has been submitted successfully. We will get back to you within 24 hours.', zh: '感谢！您的询盘已成功提交。我们将在24小时内回复您。', ja: 'ありがとうございます！お問い合わせを受け付けました。24時間以内にご返信します。', es: '¡Gracias! Su consulta ha sido enviada. Le responderemos en 24 horas.', ar: 'شكراً لك! تم إرسال استفسارك بنجاح. سنرد عليك خلال 24 ساعة.' },
   'contact.address': { en: 'Address', zh: '地址', ja: '住所', es: 'Dirección', ar: 'العنوان' },
   'contact.addressValue': { en: '888 Innovation Road, High-Tech Zone, Shenzhen, Guangdong, China', zh: '中国广东省深圳市高新区创新路888号', ja: '中国广东省深圳市高新区創新路888号', es: '888 Innovation Road, Zona de Alta Tecnología, Shenzhen, China', ar: '888 Innovation Road، منطقة التكنولوجيا العالية، شنتشن، الصين' },
